@@ -1,12 +1,23 @@
 # `portmaster-plugin-yaegi`
 
+**DISCLAIMER**: This is not an official Safing product!  
+
 This repository provides a [Safing Portmaster](https://github.com/safing/portmaster) plugin that provides Rules-As-Code for firewalling decisions based on [traefik/yaegi](https://github.com/traefik/yaegi).
 
 **Warning**: This repository is based on the experimental Portmaster Plugin System which is available in [safing/portmaster#834](https://github.com/safing/portmaster/pull/834) but has not been merged and released yet.
 
 ## Installation
 
-### Manually 
+### Using the install command
+
+This plugin uses the `cmds.InstallCommand()` from the portmaster plugin framework so installation is as simple as:
+
+```bash
+go build .
+sudo ./portmaster-plugin-yaegi install --data /opt/safing/portmaster
+```
+
+### Manual Installation
 
 To manually install the plugin follow these steps:
 
@@ -26,14 +37,6 @@ To manually install the plugin follow these steps:
    ]
    ```
 
-### Using the install command
-
-This plugin uses the `cmds.InstallCommand()` from the portmaster plugin framework so installation is as simple as:
-
-```bash
-go build .
-sudo ./portmaster-plugin-yaegi install --data /opt/safing/portmaster
-```
 
 ## Configuration
 
