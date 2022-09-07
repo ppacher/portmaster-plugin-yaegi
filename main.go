@@ -66,7 +66,9 @@ func main() {
 		Run: func(cmd *cobra.Command, args []string) {
 			engine := NewRuleEngine()
 
-			framework.RegisterDecider(engine)
+            if err := framework.RegisterDecider(engine); err != nil {
+                panic(err)
+            }
 
 			framework.OnInit(func(ctx context.Context) error {
 				var cfg Config

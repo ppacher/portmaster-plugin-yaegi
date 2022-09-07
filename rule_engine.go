@@ -46,8 +46,8 @@ func (engine *RuleEngine) Reset() {
 	defer engine.l.Unlock()
 
 	inter := interp.New(interp.Options{})
-	inter.Use(stdlib.Symbols)
-	inter.Use(Symbols)
+	_ = inter.Use(stdlib.Symbols)
+	_ = inter.Use(Symbols)
 
 	engine.interpreter = inter
 }
